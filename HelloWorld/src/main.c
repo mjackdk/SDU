@@ -11,13 +11,12 @@ int main(void) {
   uart_init(); // open the communication to the microcontroller
   io_redirect(); // redirect input and output to the communication
 
-    while(1) {
+  while(1) {
 		
-      _delay_ms(1000)	;
+    _delay_ms(1000)	;
 		
-      printf("Hello World!!! \n");
+    printf("Hello World!!! \n");
 
-    }
-    
+  }
     return 0;
 }
