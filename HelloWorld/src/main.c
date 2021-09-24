@@ -1,6 +1,6 @@
 // libraries from avr-libc, the AVR C runtime library
 #include <avr/io.h> // device-specific IO definitions
-#include <stdio.h> // standard IO facilities. printf etc.
+#include <stdio.h> // standard IO facilities, printf etc.
 #include <util/delay.h> // basic busy-wait delay loops, _delay_ms etc.
 
 // local libraries
