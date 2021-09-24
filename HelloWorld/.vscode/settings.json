@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "stdio.h": "c",
-        "io.h": "c",
-        "delay.h": "c",
-        "usart.h": "c"
-    }
-}

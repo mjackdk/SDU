@@ -1,5 +1,3 @@
-#define F_CPU 16000000UL // 16 MHZ
-
 // libraries from avr-libc, the AVR C runtime library
 #include <avr/io.h> // device-specific IO definitions
 #include <stdio.h> // standard IO facilities. printf etc.
