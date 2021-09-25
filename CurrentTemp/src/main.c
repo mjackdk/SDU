@@ -12,21 +12,17 @@ int main(void) {
     int min_temp;
     int max_temp;
 
-    int min_is_set = 0;
-    int max_is_set = 0;
+    int initial_run = 1;
 
     while(1){
         _delay_ms(1000);
         printf("What is the temperature?: ");
         scanf("%d", &current_temp);
 
-        if (min_is_set == 0){
+        if (initial_run == 1){
             min_temp = current_temp;
-            min_is_set = 1;
-        }
-        if (max_is_set == 0){
             max_temp = current_temp;
-            max_is_set = 1;
+            initial_run = 0;
         }
 
         if (current_temp < min_temp){
