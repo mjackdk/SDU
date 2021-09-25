@@ -33,7 +33,8 @@ int main(void) {
             max_temp = current_temp; 
         }
 
-        printf("\nCurrent temp: %d. Min temp: %d. Max temp: %d\n", current_temp, min_temp, max_temp);
+        printf("\nCurrent temp: %d. ", current_temp);
+        printf("Min temp: %d. Max temp: %d\n", min_temp, max_temp);
     }
     return 0;
 }
