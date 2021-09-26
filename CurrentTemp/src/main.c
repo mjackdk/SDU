@@ -12,7 +12,7 @@ int main(void) {
     int min_temp;
     int max_temp;
 
-    int initial_run = 1;
+    char initial_run = 1;
 
     while(1){
         _delay_ms(1000);
