@@ -1,15 +1,38 @@
-// libraries from avr-libc, the AVR C runtime library
 #include <avr/io.h>
 #include <stdio.h>
 #include <util/delay.h>
 
-// local libraries
 #include "usart.h"
 
-void setup() {
-  // put your setup code here, to run once:
-}
+int main(void) {
+    uart_init();
+    io_redirect();
 
-void loop() {
-  // put your main code here, to run repeatedly:
+    int secret;
+    int guess;
+    int attempts = 1;
+
+    printf("[User 1] input number to guess: ");
+    scanf("%d", &secret);
+    printf("\n[User 2] make initial guess: ");
+    scanf("%d", &guess);
+
+    do
+    {
+        attempts ++;
+
+        if(secret > guess) {
+            printf("\n[User 2]: too low, try again: ");
+            scanf("%d", &guess);
+        }
+
+        if(secret < guess) {
+            printf("\n[User 2] too high, try again: ");
+            scanf("%d", &guess);
+        }
+    } while (secret != guess);
+
+    printf("\n[User 2] you found the secret number %d in %d attempts", secret, attempts);
+
+    return 0;
 }
