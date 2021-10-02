@@ -12,7 +12,15 @@ int main(void) {
     while(1){
         printf("Type in a number: ");
         scanf("%d", &x);
-        printf("You typed %d\n", x);
+        printf("\nDivisors:");
+
+        for (int i = 1; i <= x; i++) {
+          if (x % i == 0) {
+            printf(" %d", i);
+          }          
+        }
+
+        printf("\n");        
     }
     return 0;
 }
