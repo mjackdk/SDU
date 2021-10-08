@@ -18,14 +18,14 @@ int main(void) {
 
     do
     {
-        attempts ++;
-
         if(secret > guess) {
+            attempts ++;
             printf("\n[User 2]: too low, try again: ");
             scanf("%d", &guess);
         }
 
         if(secret < guess) {
+            attempts ++;
             printf("\n[User 2] too high, try again: ");
             scanf("%d", &guess);
         }
