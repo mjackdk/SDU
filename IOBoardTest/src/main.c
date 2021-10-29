@@ -20,6 +20,6 @@ int main (void){
         temperature = get_temperature();
         _delay_ms(500);
         LCD_set_cursor(1,1);
-        printf("Temp = %.1f\337C   ", temperature);
+        printf("Temp = %.2f\337C   ", temperature);
     }
 }
