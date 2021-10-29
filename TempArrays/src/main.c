@@ -5,15 +5,21 @@
 
 #define DAYS 7
 
+
+// Function prototype
+float convert(int);
+
 int main(void) {
     uart_init();
     io_redirect();
 
+    // Placeholder values
     int min_temp = 100;
     int max_temp = -100;
     float sum_temp = 0;
 
     int temp_celcius[DAYS];
+    float temp_fahrenheit[DAYS];
 
     for (int i = 0; i < DAYS; i++)
     {
@@ -22,7 +28,7 @@ int main(void) {
     }
     for (int i = 0; i < DAYS; i++)
     {
-        printf("\nTemp for day %d: %d", i + 1, temp_celcius[i]);
+        printf("\nDay %d:\t%d C", i + 1, temp_celcius[i]);
     }
     for (int i = 0; i < DAYS; i++)
     {
@@ -34,9 +40,19 @@ int main(void) {
         }
         sum_temp += temp_celcius[i];
     }
-    printf("\nMinimal temp is: %d", min_temp);
-    printf("\nMaximal temp is: %d", max_temp);
-    printf("\nAverage temp is: %.1f", sum_temp/DAYS);
+    printf("\nMinimal temp is: %d C", min_temp);
+    printf("\nMaximal temp is: %d C", max_temp);
+    printf("\nAverage temp is: %.1f C", sum_temp/DAYS);
 
+    for (int i = 0; i < DAYS; i++)
+    {
+        temp_fahrenheit[i] = convert(temp_celcius[i]);
+        printf("\nDay %d:\t%d C\t%.1f F", i + 1, temp_celcius[i], temp_fahrenheit[i]);
+    }
     return 0;
+}
+
+float convert(int c_temp){
+    float f_temp = c_temp * 9.0 / 5 + 32;
+    return f_temp;
 }
