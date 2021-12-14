@@ -15,7 +15,7 @@ int main(){
 
     uint16_t adc_result;
     float voltage;
-    float temperature;
+    float humidity;
 
     // Set Vref = AVcc
     ADMUX = (1<<REFS0);
@@ -31,8 +31,9 @@ int main(){
         voltage = ((5.077/1024.0) * adc_result) - 1.0;
         printf("Voltage: %f\n", voltage);
 
-        temperature = 100.0 * voltage;
-        printf("Temperature: %f\n\n", temperature);
+        // From "HIH-4000 Series Humidity Sensors" datasheet
+        humidity = (voltage - 0.826) * 0.0315;
+        printf("Relative humidity: %f\n\n", humidity);
 
     }   
 }
